@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Estimator | PBS Designs</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav class="container">
+        <div class="logo">
+            <img src="../image/pbs_designs_logo_final.svg" alt="PBS Designs Logo" class="logo-svg">
+            PBS <span>DESIGNS</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="service.html">Services & Quote</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li><a href="portfolios.html">Portfolios</a></li>
+        </ul>
+        <a href="index.html#contact" class="btn-cta-small">Book Now</a>
+    </nav>
+</header>
+
+<section class="container form-section">
+    <h1>Project Cost Estimator</h1>
+    <p>Select your industry and the services you need to see an instant estimate based on our **Competitive Positioning Strategy** [3].</p>
+
+    <form id="quoteForm">
+        <!-- 1. Applicant Info -->
+        <div class="form-group">
+            <h3>1. Contact Information</h3>
+            <input type="text" id="name" placeholder="Applicant Name" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+        </div>
+
+        <!-- 2. Industry Selection (10 Fields + Other) -->
+        <div class="form-group">
+            <h3>2. Business Industry</h3>
+            <select id="industry" onchange="toggleOtherIndustry()">
+                <option value="" disabled selected>Select your industry...</option>
+                <option value="Tourism">Tourism & B&Bs</option>
+                <option value="Trade">Local Trade (Plumbing/Electric)</option>
+                <option value="Professional">Professional Services</option>
+                <option value="Retail">Retail / E-commerce</option>
+                <option value="NailSalon">Nail Salon</option>
+                <option value="Pet">Pet Supplies</option>
+                <option value="Cafe">Cafe / Restaurant</option>
+                <option value="RealEstate">Real Estate</option>
+                <option value="Fitness">Fitness / Yoga Studio</option>
+                <option value="Photography">Photography</option>
+                <option value="Other">None of the above (Other)</option>
+            </select>
+            <input type="text" id="otherIndustry" placeholder="Please specify your industry" style="display:none; margin-top:10px;">
+        </div>
+
+        <!-- 3. Categorized Services (Based on PDF Tiers) -->
+        <div class="form-group">
+            <h3>3. Choose Your Services</h3>
+
+            <!-- Pillar 1: Brand Identity [5] -->
+            <div class="service-category">
+                <h4>Strategic Brand Identity</h4>
+                <label><input type="checkbox" class="service-item" data-price="500" value="Logo Design"> **Starter Package**: Logo & Style Guide ($500)</label><br>
+                <label><input type="checkbox" class="service-item" data-price="1200" value="Full Identity"> **Growth Package**: Full Corporate Identity ($1200)</label>
+            </div>
+
+            <!-- Pillar 2: Web Development [6] -->
+            <div class="service-category">
+                <h4>Responsive Web Development</h4>
+                <label><input type="checkbox" class="service-item" data-price="1500" value="Starter Web"> **Starter Launch**: Fixed-price Basic Web Setup ($1500)</label><br>
+                <label><input type="checkbox" class="service-item" data-price="3500" value="Custom Web"> **Custom Growth**: Complex UI/UX & Architecture ($3500)</label>
+            </div>
+
+            <!-- Pillar 3: SEO & Maintenance [3, 7] -->
+            <div class="service-category">
+                <h4>Advanced SEO & Growth</h4>
+                <label><input type="checkbox" class="service-item" data-price="300" value="Local SEO"> Basic Local SEO Mapping ($300)</label><br>
+                <label><input type="checkbox" class="service-item" data-price="500" value="Monthly Retainer"> Monthly Maintenance Retainer (Fixed Monthly) ($500)</label>
+            </div>
+        </div>
+
+        <!-- Detailed Estimate Block -->
+        <div id="estimateBlock" class="estimate-box">
+            <h3>Estimated Total: $<span id="totalPrice">0</span></h3>
+            <p id="details">Please select services to see the breakdown.</p>
+            <small>*Final pricing subject to specific project requirements.</small>
+        </div>
+
+        <div class="submit-container">
+            <button type="button" class="btn-submit" onclick="submitQuote()">Submit Quote Request</button>
+            <p class="submit-disclaimer">
+                <strong>Note:</strong>  Submitting this form <strong>does not</strong> require immediate payment. Once received, a specialist will contact you within two business days to discuss your needs, confirm the final project price, and finalize the contract.
+            </p>
+        </div>
+    </form>
+</section>
+
+<footer>
+    <div class="container text-center">
+        <p>&copy; 2026 PBS Designs. Empowering PEI Businesses [8].</p>
+    </div>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
